@@ -1,0 +1,29 @@
+<!doctype html><html lang="en-CA"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Detective's Traffic Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"><style>
+:root{--coral:#E8604C;--turq:#1FA3A3;--cream:#FFF6E5;--ink:#2b2b2b}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.45}
+main{max-width:640px;margin:0 auto;padding:18px 16px 40px}
+h1{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--coral);font-size:30px;line-height:1.1;margin:8px 0 6px}
+h2{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--turq);font-size:22px;margin:22px 0 8px}
+.tag{display:inline-block;background:var(--turq);color:#fff;font-family:'Lilita One';padding:3px 12px;border-radius:12px;font-size:15px}
+.hero{display:flex;gap:14px;align-items:center}.hero img{width:120px;height:auto;border-radius:14px;background:#fff}
+.card{background:#fff;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.btn{display:block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font-family:'Lilita One';font-size:21px;padding:14px;border-radius:14px;margin:10px 0;border:0;width:100%;cursor:pointer}
+.btn.t{background:var(--turq)}
+ul{padding-left:20px}li{margin:4px 0}
+.small{font-size:14px;color:#666}
+footer{font-size:13px;color:#777;text-align:center;margin-top:28px}
+a{color:var(--turq)}
+
+.stage{background:#fff;border-radius:18px;padding:16px;text-align:center}
+.big{font-family:'Lilita One';font-size:28px;color:var(--coral);margin:10px 0}
+.timer{font-family:'Lilita One';font-size:64px;color:var(--turq)}
+.end{display:none;background:var(--turq);color:#fff;border-radius:16px;padding:16px;margin-top:14px;font-size:19px}
+</style></head><body><main><h1>The Detective's Traffic Light</h1><div class="stage"><p id="f" style="font-size:22px;min-height:90px"></p>
+<div style="display:flex;gap:8px"><button class="btn" style="background:#2ecc71" data-c="v">GREEN<br><span style="font-size:13px">I get it</span></button><button class="btn" style="background:#f1c40f;color:#2b2b2b" data-c="g">YELLOW<br><span style="font-size:13px">strange word</span></button><button class="btn" style="background:#e74c3c" data-c="r">RED<br><span style="font-size:13px">I don't get it</span></button></div>
+<div class="small" id="s"></div></div><div class="end" id="e">Case closed! Now grab a real book and read a page using the traffic light out loud.</div><p><a href="../">Back to the materials</a></p><script>
+const F=[["The dog ran into the garden to fetch the ball.","v","Clear sentence: green!"],["The sailor looked at the cliff from the deck of the ship.","g","\"Cliff\" is a tricky word: yellow! It means a high wall of rock by the sea."],["The cake was so good that nobody ate it.","r","Strange: if it was good, why did nobody eat it? Red: I reread and look for the clue!"],["Leo put his umbrella in his backpack because the sky was grey.","v","All clear: green!"],["The cat, unperturbed, watched the rain.","g","\"Unperturbed\" means super calm: yellow, and now you know it!"],["Mia won the race and cried with sadness.","r","She won and cried with sadness? Something doesn't add up: red, I reread!"]];
+let i=0,ok=0;const P=document.getElementById('f'),S=document.getElementById('s');function next(){if(i>=F.length){P.textContent='Score: '+ok+' out of '+F.length;document.getElementById('e').style.display='block';return}P.textContent=F[i][0];}
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{if(i>=F.length)return;if(b.dataset.c==F[i][1])ok++;S.textContent=F[i][2];i++;setTimeout(next,2600)});next();
+</script><footer>Murphy&#x27;s Law for Kids – Lost? Play Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>

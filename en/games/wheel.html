@@ -1,0 +1,32 @@
+<!doctype html><html lang="en-CA"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Murphy's Wheel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"><style>
+:root{--coral:#E8604C;--turq:#1FA3A3;--cream:#FFF6E5;--ink:#2b2b2b}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.45}
+main{max-width:640px;margin:0 auto;padding:18px 16px 40px}
+h1{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--coral);font-size:30px;line-height:1.1;margin:8px 0 6px}
+h2{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--turq);font-size:22px;margin:22px 0 8px}
+.tag{display:inline-block;background:var(--turq);color:#fff;font-family:'Lilita One';padding:3px 12px;border-radius:12px;font-size:15px}
+.hero{display:flex;gap:14px;align-items:center}.hero img{width:120px;height:auto;border-radius:14px;background:#fff}
+.card{background:#fff;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.btn{display:block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font-family:'Lilita One';font-size:21px;padding:14px;border-radius:14px;margin:10px 0;border:0;width:100%;cursor:pointer}
+.btn.t{background:var(--turq)}
+ul{padding-left:20px}li{margin:4px 0}
+.small{font-size:14px;color:#666}
+footer{font-size:13px;color:#777;text-align:center;margin-top:28px}
+a{color:var(--turq)}
+
+.stage{background:#fff;border-radius:18px;padding:16px;text-align:center}
+.big{font-family:'Lilita One';font-size:28px;color:var(--coral);margin:10px 0}
+.timer{font-family:'Lilita One';font-size:64px;color:var(--turq)}
+.end{display:none;background:var(--turq);color:#fff;border-radius:16px;padding:16px;margin-top:14px;font-size:19px}
+</style></head><body><main><h1>Murphy's Wheel</h1><div class="stage"><canvas id="c" width="300" height="300" style="max-width:100%"></canvas><div class="big" id="r">Spin the wheel!</div><button class="btn" id="b">SPIN</button></div>
+<div class="end" id="e">Now it's your turn: act out the mishap for real, in the silliest voice you have. And at the end: "...and it was Murphy!"</div><p><a href="../">Back to the materials</a></p><script>
+const G=["The missing sock","The spilled milk","The forgotten backpack","The sudden rain","The broken pencil","The keys in the fridge","The homework that blew away","The vanished remote"];
+const C=["#E8604C","#1FA3A3","#F4B400","#8E24AA","#43A047","#FB8C00","#1E88E5","#E53935"];const c=document.getElementById('c').getContext('2d');let a=0,spin=false;
+function draw(){c.clearRect(0,0,300,300);const n=G.length;for(let i=0;i<n;i++){c.beginPath();c.moveTo(150,150);c.fillStyle=C[i];c.arc(150,150,140,a+i*2*Math.PI/n,a+(i+1)*2*Math.PI/n);c.fill();}
+c.beginPath();c.fillStyle="#fff";c.arc(150,150,26,0,7);c.fill();c.fillStyle="#2b2b2b";c.beginPath();c.moveTo(140,4);c.lineTo(160,4);c.lineTo(150,26);c.fill();}
+draw();document.getElementById('b').onclick=()=>{if(spin)return;spin=true;let v=0.35+Math.random()*0.25;const t=setInterval(()=>{a+=v;v*=0.985;draw();if(v<0.003){clearInterval(t);spin=false;const n=G.length;let ang=((-Math.PI/2-a)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);const i=Math.floor(ang/(2*Math.PI/n));document.getElementById('r').textContent=G[i];document.getElementById('e').style.display='block';}},16);};
+</script><script>
+const START=Date.now();setInterval(()=>{if(Date.now()-START>5*60*1000){document.querySelector('.stage').innerHTML='<div class="big">Time&#39;s up!</div><p>Put the phone away and play Blame Murphy! for real.</p>';}},5000);
+</script><footer>Murphy&#x27;s Law for Kids – Lost? Play Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>
