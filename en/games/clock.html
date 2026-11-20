@@ -30,4 +30,4 @@ function beep(){try{const a=new AudioContext(),o=a.createOscillator();o.connect(
 document.getElementById('go').onclick=()=>{if(run)return;run=setInterval(()=>{left--;show();if(left<=0){beep();if(mode=='w'){turns++;document.getElementById('k').textContent='Turns done: '+turns;
 if(turns%4==0){mode='p';left=10*60;M.textContent='Long break: 10 minutes';E.style.display='block';}else{mode='p';left=3*60;M.textContent='3-minute break';E.style.display='block';}}
 else{mode='w';left=work;M.textContent='Work turn';E.style.display='none';}}},1000)};
-</script><footer>Murphy&#x27;s Law for Kids – Lost? Play Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>
+</script><footer>Murphy&#x27;s Law: Whoever Loses Plays Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>

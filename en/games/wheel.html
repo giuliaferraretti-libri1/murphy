@@ -29,4 +29,4 @@ c.beginPath();c.fillStyle="#fff";c.arc(150,150,26,0,7);c.fill();c.fillStyle="#2b
 draw();document.getElementById('b').onclick=()=>{if(spin)return;spin=true;let v=0.35+Math.random()*0.25;const t=setInterval(()=>{a+=v;v*=0.985;draw();if(v<0.003){clearInterval(t);spin=false;const n=G.length;let ang=((-Math.PI/2-a)%(2*Math.PI)+2*Math.PI)%(2*Math.PI);const i=Math.floor(ang/(2*Math.PI/n));document.getElementById('r').textContent=G[i];document.getElementById('e').style.display='block';}},16);};
 </script><script>
 const START=Date.now();setInterval(()=>{if(Date.now()-START>5*60*1000){document.querySelector('.stage').innerHTML='<div class="big">Time&#39;s up!</div><p>Put the phone away and play Blame Murphy! for real.</p>';}},5000);
-</script><footer>Murphy&#x27;s Law for Kids – Lost? Play Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>
+</script><footer>Murphy&#x27;s Law: Whoever Loses Plays Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer></main></body></html>
