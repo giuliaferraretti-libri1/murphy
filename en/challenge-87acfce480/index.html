@@ -115,6 +115,10 @@ h1,h2,h3,.lil{font-family:'Lilita One',sans-serif;font-weight:400}
 .ppal{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:10px 8px 14px;background:#fffaf0}
 .ppal button{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #cbb894,0 3px 0 rgba(0,0,0,.15);cursor:pointer}
 .ppal button.on{transform:scale(1.2);box-shadow:0 0 0 3px var(--ink)}
+.ages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:6px 0 12px}
+.age{font-family:'Lilita One';font-size:16px;border:0;border-radius:12px;padding:9px 4px;background:#efe2c6;color:#6b5d48;box-shadow:0 3px 0 #dcc79f;cursor:pointer}
+.age small{display:block;font-family:'Nunito';font-weight:800;font-size:11px}
+.age.on{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
 .how{background:#fff;border-radius:14px;padding:8px 12px;margin:8px 0 12px;box-shadow:0 3px 0 #e2cfa8;font-size:15px}
 .how summary{font-family:'Lilita One';color:var(--coral);font-size:17px;cursor:pointer}
 .how ol{margin:6px 0 2px;padding-left:22px}.how li{margin:3px 0}
@@ -198,7 +202,8 @@ footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
 
 <section class="panel" id="science">
 <h2>Murphy's Science Quiz 🔬</h2>
-<details class="how" open><summary>How to play</summary><ol><li>Read the question out loud (a grown-up can read it to younger kids).</li><li>Tap the answer you think is right.</li><li>Green = correct! Red = oops: read the “did you know” fact, now you know it!</li><li>10 questions per game. At the end you see your score.</li><li>Tap <b>Play again</b> for 10 new questions. Play as a family: who gets the best score? Whoever loses plays again!</li></ol></details>
+<details class="how" open><summary>How to play</summary><ol><li>Choose the age: questions get harder from 7–8 to 10–11.</li><li>Read the question out loud (a grown-up can read it to younger kids).</li><li>Tap the answer you think is right.</li><li>Green = correct! Red = oops: read the “did you know” fact, now you know it!</li><li>10 questions per game, then you see your score. Tap <b>Play again</b> for new questions. Whoever loses plays again!</li></ol></details>
+<div class="ages"><button class="age on" data-b="7-8">7–8<small>years</small></button><button class="age" data-b="8-9">8–9<small>years</small></button><button class="age" data-b="9-10">9–10<small>years</small></button><button class="age" data-b="10-11">10–11<small>years</small></button></div>
 <div class="qz"><div class="qzhead"><span id="qzN"></span><span id="qzScore"></span></div><div class="qzq" id="qzQ"></div><div class="qzops" id="qzOps"></div><div class="qzfb" id="qzFb"></div><button class="btn t" id="qzNext" style="display:none;margin-top:12px"></button></div>
 </section>
 
@@ -208,6 +213,7 @@ footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
 <div class="cgrid"><div class="cpage"><button type="button" data-paint="1" aria-label="Colour drawing 1 on the phone"><img src="colour/t01.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="2" aria-label="Colour drawing 2 on the phone"><img src="colour/t02.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="3" aria-label="Colour drawing 3 on the phone"><img src="colour/t03.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="4" aria-label="Colour drawing 4 on the phone"><img src="colour/t04.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="5" aria-label="Colour drawing 5 on the phone"><img src="colour/t05.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="6" aria-label="Colour drawing 6 on the phone"><img src="colour/t06.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="7" aria-label="Colour drawing 7 on the phone"><img src="colour/t07.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="8" aria-label="Colour drawing 8 on the phone"><img src="colour/t08.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="9" aria-label="Colour drawing 9 on the phone"><img src="colour/t09.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="10" aria-label="Colour drawing 10 on the phone"><img src="colour/t10.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="11" aria-label="Colour drawing 11 on the phone"><img src="colour/t11.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div><div class="cpage"><button type="button" data-paint="12" aria-label="Colour drawing 12 on the phone"><img src="colour/t12.jpg" alt="" loading="lazy"><span>🎨 Colour me</span></button></div></div>
 </section>
 
+<section class="panel" id="review" style="text-align:center;background:linear-gradient(160deg,#fffaf0,#fff1cf)"><div style="font-size:40px;line-height:1">⭐⭐⭐</div><h2 style="margin:6px 0">How did it go?</h2><p style="margin:0 0 12px">Tell other families! An <b>honest review</b> on Amazon, whatever you think, helps other parents choose the book and play together with their kids.</p><p style="margin:0 0 6px"><b>How:</b> find <i>Murphy's Law: Whoever Loses Plays Again!</i> on Amazon.ca, scroll down and tap <b>“Write a customer review”</b>.</p><p class="muted" style="margin:10px 0 0">Two lines are enough: what you liked, what you would change. Thank you from Giulia and Murphy!</p></section>
 <section class="panel">
 <h2>Print it out</h2>
 <div class="muted">Letter size, actual size (100%). Black and white is fine: everything is made to be coloured.</div>
@@ -253,7 +259,7 @@ paint(0);
 </script>
 <script src="../img/book3d/book3d.js"></script>
 <script src="../img/book3d/road.js?v=3"></script>
-<script src="../img/book3d/science.js?v=2"></script>
+<script src="../img/book3d/science.js?v=3"></script>
 <script src="../img/book3d/paint.js?v=2"></script>
 </body>
 </html>
