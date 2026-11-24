@@ -88,7 +88,9 @@ h1,h2,h3,.lil{font-family:'Lilita One',sans-serif;font-weight:400}
 .abc div.now{background:#fff;color:var(--coral);box-shadow:0 0 0 3px var(--coral);animation:pulse 1.2s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.12)}}
 .dwrap{display:flex;justify-content:center;perspective:600px;margin:10px 0}
-.die{font-size:72px;width:120px;height:120px;border:0;border-radius:26px;background:linear-gradient(160deg,#fff,#f3e3c2);box-shadow:0 8px 0 #dcc59a,0 18px 24px rgba(80,50,10,.22);cursor:pointer}
+.die{width:120px;height:120px;border:0;border-radius:26px;background:linear-gradient(160deg,#fff,#f3e3c2);box-shadow:0 8px 0 #dcc59a,0 18px 24px rgba(80,50,10,.22);cursor:pointer;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:16px;gap:4px}
+.die i{border-radius:50%;background:var(--coral);box-shadow:inset 0 -3px 0 var(--coral-d);visibility:hidden;margin:3px}
+.die i.on{visibility:visible}
 .die.roll{animation:roll .8s cubic-bezier(.2,.8,.3,1)}
 @keyframes roll{0%{transform:rotateX(0) rotateY(0)}100%{transform:rotateX(720deg) rotateY(540deg)}}
 .dout,.qcard{background:#fff;border-radius:16px;padding:16px;text-align:center;font-size:19px;font-weight:800;min-height:96px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #dcc59a}
@@ -145,7 +147,7 @@ footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
 </div>
 <div class="rp on" id="rp-bingo"><p class="muted" style="margin:6px 0">Spot it out of the window, then tap it. Four in a row = BINGO!</p><div class="bingo" id="bingo"></div><button class="btn t" id="newBingo" style="margin-top:12px">New card</button></div>
 <div class="rp" id="rp-abc"><p class="muted" style="margin:6px 0">Find the letters <b>in order</b> on signs, trucks and shops. Tap the letter when someone spots it. Missed one? Murphy says: keep looking!</p><div class="abc" id="abc"></div><div style="display:flex;gap:10px;margin-top:12px"><button class="btn" id="abcNext">Found it!</button><button class="btn t" id="abcReset" style="width:auto">Restart</button></div></div>
-<div class="rp" id="rp-dice"><p class="muted" style="margin:6px 0">Roll Murphy's dice and play the challenge it gives you.</p><div class="dwrap"><button class="die" id="die" aria-label="Roll the dice">🎲</button></div><div class="dout" id="dout">Tap the dice to roll!</div></div>
+<div class="rp" id="rp-dice"><p class="muted" style="margin:6px 0">Roll Murphy's dice and play the challenge it gives you.</p><div class="dwrap"><button class="die" id="die" aria-label="Roll the dice"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></button></div><div class="dout" id="dout">Tap the dice to roll!</div></div>
 <div class="rp" id="rp-ask"><p class="muted" style="margin:6px 0">Everybody answers, and explains why. No wrong answers!</p><div class="qcard" id="qcard">Tap “Next question” to start.</div><button class="btn t" id="qnext" style="margin-top:12px">Next question</button></div>
 </section>
 
@@ -188,6 +190,6 @@ who.addEventListener('input',()=>{try{localStorage.setItem(KEY+'-name',who.value
 paint(0);
 </script>
 <script src="../img/book3d/book3d.js"></script>
-<script src="../img/book3d/road.js"></script>
+<script src="../img/book3d/road.js?v=2"></script>
 </body>
 </html>

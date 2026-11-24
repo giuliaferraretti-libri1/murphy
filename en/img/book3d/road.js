@@ -68,12 +68,20 @@
     ['Category race','Pick a category (food, animals, names). Take turns naming one each. Stuck? You lose… and play again!'],
     ['Thank-you round','Everyone says one thing that went wrong today and one thing that went right.']
   ];
-  var die=$('die'), dout=$('dout'), last=-1;
+  var die=$('die'), dout=$('dout'), last=-1, rolling=false;
+  var PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+  var dots=die.querySelectorAll('i');
+  function face(n){dots.forEach(function(d,k){d.classList.toggle('on',PIPS[n].indexOf(k)>=0)}); die.setAttribute('aria-label','Dice shows '+n+'. Tap to roll again');}
+  face(1+Math.floor(Math.random()*6));
   die.addEventListener('click',function(){
-    var i; do{i=Math.floor(Math.random()*DICE.length)}while(i===last); last=i;
+    if(rolling) return; rolling=true;
+    var n=1+Math.floor(Math.random()*6), i; do{i=Math.floor(Math.random()*DICE.length)}while(i===last); last=i;
     die.classList.remove('roll'); void die.offsetWidth; if(!reduce) die.classList.add('roll');
     dout.style.opacity=.3;
-    setTimeout(function(){dout.innerHTML='<div><b>'+DICE[i][0]+'</b>'+DICE[i][1]+'</div>';dout.style.opacity=1},reduce?0:650);
+    var steps=reduce?0:8, k=0;
+    (function spin(){ if(k++<steps){face(1+Math.floor(Math.random()*6)); setTimeout(spin,80);} else {
+      face(n);
+      dout.innerHTML='<div><b>You rolled '+n+'! · '+DICE[i][0]+'</b>'+DICE[i][1]+'</div>'; dout.style.opacity=1; rolling=false; } })();
   });
 
   /* 4. Would you rather? */
