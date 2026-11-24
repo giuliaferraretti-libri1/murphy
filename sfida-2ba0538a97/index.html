@@ -1,18 +1,98 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La tua sfida</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"><style>
-:root{--coral:#E8604C;--turq:#1FA3A3;--cream:#FFF6E5;--ink:#2b2b2b}
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>La tua sfida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../img/book3d/book3d.css"><style>
+:root{--coral:#E8604C;--coral-d:#b8432f;--turq:#1FA3A3;--turq-d:#137676;--paper:#fffaf0;--ink:#2b2b2b}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Nunito',system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.45}
-main{max-width:640px;margin:0 auto;padding:18px 16px 40px}
-h1{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--coral);font-size:30px;line-height:1.1;margin:8px 0 6px}
-h2{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--turq);font-size:22px;margin:22px 0 8px}
-.tag{display:inline-block;background:var(--turq);color:#fff;font-family:'Lilita One';padding:3px 12px;border-radius:12px;font-size:15px}
-.hero{display:flex;gap:14px;align-items:center}.hero img{width:120px;height:auto;border-radius:14px;background:#fff}
-.card{background:#fff;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 2px 0 rgba(0,0,0,.06)}
-.btn{display:block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font-family:'Lilita One';font-size:21px;padding:14px;border-radius:14px;margin:10px 0;border:0;width:100%;cursor:pointer}
-.btn.t{background:var(--turq)}
-ul{padding-left:20px}li{margin:4px 0}
-.small{font-size:14px;color:#666}
-footer{font-size:13px;color:#777;text-align:center;margin-top:28px}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;background:radial-gradient(circle at 20% 0%,#fbf3e2 0,#f3e7cf 45%,#e9d8b6 100%) fixed;min-height:100vh;color:var(--ink);font-size:17px;line-height:1.45;overflow-x:hidden}
+main{max-width:760px;margin:0 auto;padding:18px 16px 48px}
+.tag{display:table;margin:0 auto;background:var(--turq);color:#fff;font-family:'Lilita One';padding:4px 14px;border-radius:14px;font-size:15px;box-shadow:0 3px 0 var(--turq-d)}
+.t3d{font-family:'Lilita One',sans-serif;font-weight:400;text-align:center;color:var(--coral);font-size:clamp(34px,9vw,52px);line-height:1.02;margin:12px 0 0;-webkit-text-stroke:2px #fff;paint-order:stroke fill;
+ text-shadow:0 1px 0 #d8533f,0 2px 0 #cf4e3a,0 3px 0 #c54935,0 4px 0 #bb4431,0 5px 0 #b03f2d,0 6px 0 #a53a29,0 8px 2px rgba(0,0,0,.2),0 14px 14px rgba(0,0,0,.18)}
+.t3d small{display:block;font-size:.6em;color:var(--turq);text-shadow:0 1px 0 #1b9494,0 2px 0 #188a8a,0 3px 0 #168080,0 4px 0 #137676,0 6px 2px rgba(0,0,0,.2),0 12px 12px rgba(0,0,0,.16)}
+h2{font-family:'Lilita One',sans-serif;font-weight:400;color:var(--turq);font-size:26px;margin:0 0 6px}
+.panel{background:var(--paper);border-radius:22px;padding:18px;margin:18px 0;box-shadow:0 2px 0 #fff inset,0 6px 0 #e2cfa8,0 16px 26px rgba(80,50,10,.16)}
+.muted{color:#6b5d48;font-size:15px}
+.btn{display:block;width:100%;border:0;border-radius:14px;font-family:'Lilita One';font-size:19px;color:#fff;background:var(--coral);padding:12px 14px;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 5px 0 var(--coral-d),0 10px 14px rgba(0,0,0,.15)}
+.btn.t{background:var(--turq);box-shadow:0 5px 0 var(--turq-d),0 10px 14px rgba(0,0,0,.15)}
+.how{background:#fff;border-radius:14px;padding:8px 12px;margin:8px 0 12px;box-shadow:0 3px 0 #e2cfa8;font-size:15px}
+.how summary{font-family:'Lilita One';color:var(--coral);font-size:17px;cursor:pointer}
+.how ol{margin:6px 0 2px;padding-left:22px}.how li{margin:3px 0}
+.ages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:6px 0 12px}
+.age{font-family:'Lilita One';font-size:16px;border:0;border-radius:12px;padding:9px 4px;background:#efe2c6;color:#6b5d48;box-shadow:0 3px 0 #dcc79f;cursor:pointer}
+.age small{display:block;font-family:'Nunito';font-weight:800;font-size:11px}
+.age.on{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
+.qz{background:#fff;border-radius:16px;padding:14px;box-shadow:0 5px 0 #dcc59a}
+.qzhead{display:flex;justify-content:space-between;font-weight:800;font-size:14px;color:#8a7a60}
+.qzq{font-family:'Lilita One';font-size:22px;margin:8px 0 12px;line-height:1.2}
+.qzops{display:grid;gap:8px}
+.qzops button{font:800 17px 'Nunito',sans-serif;text-align:left;border:0;border-radius:12px;padding:12px 14px;background:#f6ecd6;box-shadow:0 3px 0 #dcc79f;color:var(--ink);cursor:pointer}
+.qzops button.ok{background:#bfeee5;box-shadow:0 3px 0 #6fc0b4}.qzops button.no{background:#ffd0c7;box-shadow:0 3px 0 #e08a7a}
+.qzfb{margin-top:10px;font-size:16px;line-height:1.35}.qzfb:empty{display:none}
+.qzfb.good{background:#e8f8f4;border-radius:12px;padding:10px}.qzfb.bad{background:#fff0ec;border-radius:12px;padding:10px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+.cpage{background:#fff;border-radius:12px;padding:6px;text-align:center;box-shadow:0 4px 0 #dcc59a;transition:transform .2s}
+.cpage:hover{transform:translateY(-3px) rotate(-1deg)}
+.cpage button{display:block;width:100%;border:0;background:none;padding:0;cursor:pointer;font:inherit}
+.cpage img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.cpage span{display:block;font-family:'Lilita One';color:var(--coral);font-size:15px;margin-top:2px}
+.paint{position:fixed;inset:0;z-index:50;background:#f3e7cf;display:none;flex-direction:column}.paint.show{display:flex}
+.ptop{display:flex;gap:6px;padding:8px;flex-wrap:wrap;justify-content:center;background:#fffaf0;box-shadow:0 3px 0 #e2cfa8}
+.ptop button{border:0;border-radius:10px;background:#efe2c6;box-shadow:0 3px 0 #dcc79f;font:800 14px 'Nunito',sans-serif;padding:7px 10px;cursor:pointer;color:#5a4d3a}
+.ptop button.on{background:var(--turq);color:#fff;box-shadow:0 3px 0 var(--turq-d)}
+#pclose{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
+.pstage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px}
+#pcv{max-width:100%;max-height:100%;background:#fff;border-radius:10px;box-shadow:0 10px 20px rgba(80,50,10,.2);touch-action:none}
+.ppal{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;padding:10px 8px 14px;background:#fffaf0}
+.ppal button{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #cbb894,0 3px 0 rgba(0,0,0,.15);cursor:pointer}
+.ppal button.on{transform:scale(1.2);box-shadow:0 0 0 3px var(--ink)}
+.confetti{position:fixed;top:-20px;width:10px;height:14px;z-index:60;pointer-events:none;animation:fall 2.6s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
 a{color:var(--turq)}
-</style></head><body><main><h1>Ecco la tua sfida!</h1><a class="btn" href="La_sfida_di_Murphy_30_giorni.pdf" download>Scarica il PDF</a><footer>La Legge di Murphy: Chi Perde Gioca Ancora · Giulia Ferraretti<br>Materiali per uso personale e in famiglia.</footer></main></body></html>
+</style></head><body><main>
+<span class="tag">Il tuo regalo</span>
+<h1 class="t3d">Ecco la tua sfida!<small>30 giorni di giochi</small></h1>
+
+<div class="b3-stage" aria-label="Il libro La Legge di Murphy in 3D">
+ <div class="b3-rays"></div><div class="b3-glow"></div><div class="b3-shadow"></div>
+ <div class="b3-float"><div class="b3-book">
+  <div class="b3-front"></div><div class="b3-back"></div><div class="b3-spine"></div>
+  <div class="b3-pages"></div><div class="b3-top"></div><div class="b3-bot"></div>
+ </div></div>
+</div>
+<div class="b3-hint">Trascina il libro per girarlo ↻</div>
+
+<section class="panel">
+<h2>La sfida di Murphy 📅</h2>
+<p class="muted" style="margin:0 0 10px">Il calendario con le 30 mini sfide da appendere in cucina, le coppe settimanali e il diploma. Stampate su A4 al 100% (va bene anche in bianco e nero).</p>
+<a class="btn" href="La_sfida_di_Murphy_30_giorni.pdf" download>Scarica il PDF</a>
+</section>
+
+<section class="panel" id="scienza">
+<h2>Il quiz di scienze di Murphy 🔬</h2>
+<details class="how" open><summary>Come si gioca</summary><ol><li>Scegli l'età: le domande diventano più difficili da 7-8 a 10-11 anni.</li><li>Leggi la domanda ad alta voce (un grande può leggerla ai più piccoli).</li><li>Tocca la risposta che pensi sia giusta.</li><li>Verde = giusto! Rosso = ops: leggi la curiosità, adesso la sai!</li><li>10 domande a partita, poi vedi il punteggio. Tocca <b>Gioca ancora</b> per domande nuove. Chi perde… gioca ancora!</li></ol></details>
+<div class="ages"><button class="age on" data-b="7-8">7-8<small>anni</small></button><button class="age" data-b="8-9">8-9<small>anni</small></button><button class="age" data-b="9-10">9-10<small>anni</small></button><button class="age" data-b="10-11">10-11<small>anni</small></button></div>
+<div class="qz"><div class="qzhead"><span id="qzN"></span><span id="qzScore"></span></div><div class="qzq" id="qzQ"></div><div class="qzops" id="qzOps"></div><div class="qzfb" id="qzFb"></div><button class="btn t" id="qzNext" style="display:none;margin-top:12px"></button></div>
+</section>
+
+<section class="panel" id="colora">
+<h2>Colora Murphy 🖍️</h2>
+<details class="how" open><summary>Come si colora</summary><ol><li>Tocca un disegno per aprirlo (perfetto in macchina!).</li><li>Scegli un colore in basso e tocca una zona bianca: si riempie di colore. Con il <b>Pennello</b> colori a mano libera con il dito.</li><li>Hai sbagliato? Tocca <b>Annulla</b>. È colpa di Murphy, riprova!</li><li>I colori si salvano da soli: puoi chiudere e finire dopo.</li><li>Tocca <b>Salva</b> per tenere il disegno finito sul telefono. <b>Cancella</b> ricomincia dal bianco.</li></ol></details>
+<div class="cgrid"><div class="cpage"><button type="button" data-paint="1" aria-label="Colora il disegno 1 sul telefono"><img src="colore/t01.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="2" aria-label="Colora il disegno 2 sul telefono"><img src="colore/t02.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="3" aria-label="Colora il disegno 3 sul telefono"><img src="colore/t03.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="4" aria-label="Colora il disegno 4 sul telefono"><img src="colore/t04.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="5" aria-label="Colora il disegno 5 sul telefono"><img src="colore/t05.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="6" aria-label="Colora il disegno 6 sul telefono"><img src="colore/t06.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="7" aria-label="Colora il disegno 7 sul telefono"><img src="colore/t07.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="8" aria-label="Colora il disegno 8 sul telefono"><img src="colore/t08.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="9" aria-label="Colora il disegno 9 sul telefono"><img src="colore/t09.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="10" aria-label="Colora il disegno 10 sul telefono"><img src="colore/t10.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="11" aria-label="Colora il disegno 11 sul telefono"><img src="colore/t11.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div><div class="cpage"><button type="button" data-paint="12" aria-label="Colora il disegno 12 sul telefono"><img src="colore/t12.jpg" alt="" loading="lazy"><span>🎨 Colorami</span></button></div></div>
+</section>
+
+<p style="margin:16px 0 0"><a class="btn t" href="../">Tutti i materiali del libro</a></p>
+<footer>La Legge di Murphy: Chi Perde Gioca Ancora · Giulia Ferraretti<br>Materiali per uso personale e in famiglia.</footer>
+</main>
+<div class="paint" id="paint" role="dialog" aria-modal="true" aria-label="Colora il disegno" data-key="murphy-colora-it-" data-dir="colore" data-file="il-mio-disegno-murphy-">
+<div class="ptop"><button type="button" id="pfill" class="on">🪣 Riempi</button><button type="button" id="pbrush">🖌️ Pennello</button><button type="button" id="pundo">↶ Annulla</button><button type="button" id="pclear">🧽 Cancella</button><button type="button" id="psave">💾 Salva</button><button type="button" id="pclose" aria-label="Chiudi">✕</button></div>
+<div class="pstage"><canvas id="pcv" width="10" height="10"></canvas></div>
+<div class="ppal" id="ppal"></div>
+</div>
+<script>
+function confetti(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var c=['#E8604C','#1FA3A3','#f2b632','#7b5cd6','#7cbf5c'];for(var i=0;i<60;i++){var s=document.createElement('i');s.className='confetti';s.style.left=Math.random()*100+'vw';s.style.background=c[i%5];s.style.animationDelay=Math.random()*.6+'s';document.body.appendChild(s);setTimeout(function(x){return function(){x.remove()}}(s),3400)}}
+</script>
+<script src="../img/book3d/book3d.js"></script>
+<script src="../img/book3d/scienza.js"></script>
+<script src="../img/book3d/paint.js"></script>
+</body></html>

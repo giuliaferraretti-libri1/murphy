@@ -2,7 +2,7 @@
 (function(){
   var modal=document.getElementById('paint'); if(!modal) return;
   var cv=document.getElementById('pcv'), ctx=cv.getContext('2d',{willReadFrequently:true});
-  var KEY='murphy-paint-en-';
+  var KEY=modal.getAttribute('data-key')||'murphy-paint-en-', DIR=modal.getAttribute('data-dir')||'colour';
   var COLORS=['#e23d32','#f28a1b','#f2c21b','#ffe98a','#36a852','#9fd36b','#1FA3A3','#2f6fe0','#8fc4ff','#8a4fd1','#f06aa6','#ffc2a1','#8b5a2b','#d9b38c','#8f969c','#2b2b2b','#ffffff'];
   var col=COLORS[0], mode='fill', cur=0, line=null, undo=[], drawing=false, lx=0, ly=0;
   var pal=document.getElementById('ppal');
@@ -26,7 +26,7 @@
       var saved=null; try{saved=localStorage.getItem(KEY+n)}catch(e){}
       if(saved){ var s=new Image(); s.onload=function(){ctx.drawImage(s,0,0,cv.width,cv.height);restoreLines()}; s.src=saved; }
     };
-    img.src='colour/c'+(n<10?'0':'')+n+'.png';
+    img.src=DIR+'/c'+(n<10?'0':'')+n+'.png';
     modal.classList.add('show'); document.body.style.overflow='hidden';
   }
   function close(){ modal.classList.remove('show'); document.body.style.overflow=''; }
@@ -56,6 +56,6 @@
   cv.addEventListener('touchstart',down,{passive:false}); cv.addEventListener('touchmove',move,{passive:false}); cv.addEventListener('touchend',up);
   document.getElementById('pundo').addEventListener('click',function(){ if(undo.length){ctx.putImageData(undo.pop(),0,0);store()} });
   document.getElementById('pclear').addEventListener('click',function(){ push(); var im=ctx.getImageData(0,0,cv.width,cv.height),d=im.data; for(var i=0,p=0;i<line.length;i++,p+=4){d[p]=d[p+1]=d[p+2]=line[i];d[p+3]=255} ctx.putImageData(im,0,0); try{localStorage.removeItem(KEY+cur)}catch(e){} });
-  document.getElementById('psave').addEventListener('click',function(){ cv.toBlob(function(b){ var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='my-murphy-drawing-'+cur+'.png'; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1000); },'image/png'); });
+  document.getElementById('psave').addEventListener('click',function(){ cv.toBlob(function(b){ var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=(modal.getAttribute('data-file')||'my-murphy-drawing-')+cur+'.png'; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1000); },'image/png'); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
 })();
