@@ -1,0 +1,42 @@
+/* 3D rotating book - Murphy's Law (Canada) */
+.b3-stage{position:relative;height:400px;display:flex;align-items:center;justify-content:center;perspective:1300px;margin:6px 0 0;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.b3-stage:active{cursor:grabbing}
+.b3-rays{position:absolute;width:420px;height:420px;left:50%;top:50%;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;
+ background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.55) 0 8deg,rgba(255,255,255,0) 8deg 20deg);
+ -webkit-mask:radial-gradient(circle,#000 0,#000 30%,transparent 68%);mask:radial-gradient(circle,#000 0,#000 30%,transparent 68%);
+ animation:b3spin 40s linear infinite;opacity:.8}
+.b3-glow{position:absolute;width:300px;height:300px;left:50%;top:50%;margin:-160px 0 0 -150px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,120,.55),rgba(255,214,120,0) 70%);pointer-events:none}
+.b3-shadow{position:absolute;bottom:22px;left:50%;width:210px;height:26px;margin-left:-105px;border-radius:50%;background:radial-gradient(ellipse,rgba(70,40,10,.38),rgba(70,40,10,0) 70%);animation:b3sh 4s ease-in-out infinite}
+.b3-float{animation:b3float 4s ease-in-out infinite;transform-style:preserve-3d}
+.b3-book{--w:232px;--h:290px;--d:14px;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(-28deg)}
+.b3-book>div{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.b3-front,.b3-back{width:var(--w);height:var(--h);background-size:cover;background-position:center}
+.b3-front{transform:translateZ(calc(var(--d)/2));background-image:url(front.jpg);border-radius:2px 6px 6px 2px;box-shadow:inset 4px 0 6px rgba(0,0,0,.18)}
+.b3-front::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.35) 47%,rgba(255,255,255,0) 58%);background-size:260% 100%;animation:b3shine 5s ease-in-out infinite}
+.b3-back{transform:rotateY(180deg) translateZ(calc(var(--d)/2));background-image:url(back.jpg);border-radius:6px 2px 2px 6px}
+.b3-spine{width:var(--d);height:var(--h);left:calc(50% - var(--d)/2);transform:rotateY(-90deg) translateZ(calc(var(--w)/2));background:url(spine.jpg) center/100% 100%}
+.b3-pages{width:var(--d);height:calc(var(--h) - 6px);top:3px;left:calc(50% - var(--d)/2);transform:rotateY(90deg) translateZ(calc(var(--w)/2 - 3px));
+ background:repeating-linear-gradient(90deg,#fffdf7 0 1px,#e9e1cf 1px 2px)}
+.b3-top,.b3-bot{width:calc(var(--w) - 4px);height:var(--d);left:0;top:calc(50% - var(--d)/2);background:repeating-linear-gradient(0deg,#fffdf7 0 1px,#e9e1cf 1px 2px)}
+.b3-top{transform:rotateX(90deg) translateZ(calc(var(--h)/2 - 2px))}
+.b3-bot{transform:rotateX(-90deg) translateZ(calc(var(--h)/2 - 2px))}
+.b3-hint{text-align:center;font-size:13px;font-weight:800;color:#8a7a60;margin:-6px 0 4px}
+.b3-fx{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.b3-fx span{position:absolute;top:-40px;font-size:22px;opacity:.5;animation:b3drift linear infinite}
+main{position:relative;z-index:1}
+@keyframes b3spin{to{transform:rotate(360deg)}}
+@keyframes b3float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes b3sh{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.85);opacity:.7}}
+@keyframes b3shine{0%,60%{background-position:120% 0}100%{background-position:-60% 0}}
+@keyframes b3drift{to{transform:translateY(115vh) rotate(360deg)}}
+@media (max-width:420px){.b3-stage{height:350px}.b3-book{--w:200px;--h:250px;--d:12px}.b3-rays{transform:scale(.85)}}
+@media (prefers-reduced-motion:reduce){.b3-rays,.b3-float,.b3-shadow,.b3-front::after{animation:none}.b3-fx{display:none}}
+/* "what's inside" previews */
+.peek{display:flex;justify-content:center;gap:0;margin:14px 0 4px;perspective:1000px;height:200px}
+.peek img{width:128px;height:auto;align-self:center;border-radius:8px;background:#fff;box-shadow:0 12px 22px rgba(80,50,10,.28);transition:transform .35s;border:4px solid #fff}
+.peek img:nth-child(1){transform:rotateY(28deg) rotateZ(-8deg) translateX(22px)}
+.peek img:nth-child(2){transform:translateZ(40px) translateY(-8px);z-index:2;position:relative}
+.peek img:nth-child(3){transform:rotateY(-28deg) rotateZ(8deg) translateX(-22px)}
+.peek:hover img:nth-child(1){transform:rotateY(10deg) rotateZ(-4deg) translateX(-6px)}
+.peek:hover img:nth-child(3){transform:rotateY(-10deg) rotateZ(4deg) translateX(6px)}
+@media (max-width:420px){.peek{height:170px}.peek img{width:106px}}

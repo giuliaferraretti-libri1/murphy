@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Murphy's Challenge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../img/book3d/book3d.css">
+<style>
+:root{--beige:#f3e7cf;--beige2:#e9d8b6;--paper:#fffaf0;--coral:#E8604C;--coral-d:#b6412f;--turq:#1FA3A3;--turq-d:#147777;--ink:#2b2b2b;--gold:#f2b632}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:var(--ink);font-size:17px;line-height:1.45;
+ background:radial-gradient(circle at 20% 0%,#fbf3e2 0,var(--beige) 45%,var(--beige2) 100%);min-height:100vh}
+main{max-width:760px;margin:0 auto;padding:18px 16px 48px}
+h1,h2,h3,.lil{font-family:'Lilita One',sans-serif;font-weight:400}
+.t3d{font-family:'Lilita One',sans-serif;text-align:center;line-height:1.02;color:var(--coral);margin:6px 0 0;font-size:clamp(34px,9vw,58px);
+ -webkit-text-stroke:2px #fff;paint-order:stroke fill;
+ text-shadow:0 1px 0 #d8533f,0 2px 0 #cf4e3a,0 3px 0 #c54935,0 4px 0 #bb4431,0 5px 0 #b03f2d,0 6px 0 #a53a29,0 8px 2px rgba(0,0,0,.2),0 14px 14px rgba(0,0,0,.18)}
+.t3d small{display:block;font-size:.62em;color:var(--turq);text-shadow:0 1px 0 #1b9494,0 2px 0 #188a8a,0 3px 0 #168080,0 4px 0 #137676,0 6px 2px rgba(0,0,0,.2),0 12px 12px rgba(0,0,0,.16)}
+.tag{display:table;margin:0 auto;background:var(--turq);color:#fff;font-family:'Lilita One';padding:4px 14px;border-radius:14px;font-size:15px;box-shadow:0 3px 0 var(--turq-d)}
+.hero{perspective:900px;display:flex;justify-content:center;margin:14px 0 4px}
+.hero img{width:190px;height:190px;object-fit:cover;border-radius:22px;background:#fff;border:6px solid #fff;
+ box-shadow:0 18px 30px rgba(80,50,10,.28);transform:rotateY(-14deg) rotateX(6deg);transition:transform .4s}
+.hero img:hover{transform:rotateY(0) rotateX(0) scale(1.04)}
+.panel{background:var(--paper);border-radius:22px;padding:18px;margin:18px 0;
+ box-shadow:0 2px 0 #fff inset,0 6px 0 #e2cfa8,0 16px 26px rgba(80,50,10,.16)}
+.panel h2{margin:0 0 6px;color:var(--turq);font-size:26px}
+.muted{color:#6b5d48;font-size:15px}
+/* progress */
+.bar{height:20px;border-radius:12px;background:#ead9b8;box-shadow:inset 0 3px 5px rgba(0,0,0,.15);overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(180deg,#f07a66,var(--coral));border-radius:12px;transition:width .5s}
+/* trophies */
+.cups{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+.cup{text-align:center;font-size:12px;font-weight:800;color:#8a7a60}
+.cup div{aspect-ratio:1;border-radius:16px;background:#efe2c6;display:flex;align-items:center;justify-content:center;font-size:30px;filter:grayscale(1);opacity:.55;
+ box-shadow:0 4px 0 #dcc79f;transition:all .4s}
+.cup.on div{filter:none;opacity:1;background:linear-gradient(180deg,#fff3c8,#ffd96b);box-shadow:0 4px 0 #d9a92b,0 10px 16px rgba(217,169,43,.35);transform:translateY(-3px)}
+.cup.on{color:var(--coral-d)}
+/* calendar */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-top:12px}
+.day{perspective:800px;height:150px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.card{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.2,.8,.3,1.2);transform-style:preserve-3d}
+.day.open .card{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:10px;display:flex;flex-direction:column}
+.front{background:linear-gradient(160deg,#fffdf6,#f6e8c9);box-shadow:0 5px 0 #dcc59a,0 12px 16px rgba(80,50,10,.18);align-items:center;justify-content:center}
+.front .n{font-family:'Lilita One';font-size:46px;color:var(--coral);-webkit-text-stroke:1.5px #fff;paint-order:stroke fill;text-shadow:0 2px 0 #c54935,0 4px 0 #a53a29,0 7px 8px rgba(0,0,0,.18)}
+.front .lbl{font-weight:800;font-size:13px;color:#8a7a60}
+.day.done .front{background:linear-gradient(160deg,#d9f4ef,#a9e2d9);box-shadow:0 5px 0 #6fc0b4,0 12px 16px rgba(20,119,119,.22)}
+.day.done .front .n{color:var(--turq);text-shadow:0 2px 0 #188a8a,0 4px 0 #137676,0 7px 8px rgba(0,0,0,.18)}
+.day.done .front .lbl{color:var(--turq-d)}
+.back{transform:rotateY(180deg);background:#fff;box-shadow:0 5px 0 #dcc59a,0 12px 16px rgba(80,50,10,.18);font-size:13.5px;line-height:1.3}
+.back b{font-family:'Lilita One';font-weight:400;color:var(--coral);font-size:16px}
+.back p{margin:4px 0 auto}
+.btn{display:block;width:100%;border:0;border-radius:14px;font-family:'Lilita One';font-size:18px;color:#fff;background:var(--coral);padding:11px 14px;text-align:center;text-decoration:none;cursor:pointer;
+ box-shadow:0 5px 0 var(--coral-d),0 10px 14px rgba(0,0,0,.15);transition:transform .1s,box-shadow .1s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--coral-d)}
+.btn.t{background:var(--turq);box-shadow:0 5px 0 var(--turq-d),0 10px 14px rgba(0,0,0,.15)}
+.btn.sm{font-size:14px;padding:7px;border-radius:10px;box-shadow:0 3px 0 var(--coral-d)}
+.day.done .btn.sm{background:#9aa;box-shadow:0 3px 0 #788}
+/* printables */
+.prints{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:12px;perspective:1000px}
+.pr{display:block;text-decoration:none;color:var(--ink);background:#fff;border-radius:16px;padding:12px;transform:rotateX(8deg);transform-origin:bottom;
+ box-shadow:0 6px 0 #dcc59a,0 18px 22px rgba(80,50,10,.2);transition:transform .3s,box-shadow .3s}
+.pr:hover{transform:rotateX(0) translateY(-4px);box-shadow:0 10px 0 #dcc59a,0 24px 26px rgba(80,50,10,.22)}
+.pr .ic{font-size:38px;line-height:1}.pr h3{margin:6px 0 2px;color:var(--coral);font-size:18px}.pr span{font-size:13px;color:#6b5d48}
+/* diploma */
+#dipl{display:none}#dipl.show{display:block}
+.dip{background:linear-gradient(160deg,#fffdf6,#f6e8c9);border:6px double var(--gold);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 14px 26px rgba(80,50,10,.22);transform:perspective(900px) rotateX(5deg)}
+.dip .t3d{font-size:clamp(28px,7vw,44px)}
+.dip input{font:inherit;font-size:20px;text-align:center;border:0;border-bottom:2px dashed #b9a47c;background:transparent;width:90%;max-width:360px;padding:6px;margin:8px 0}
+.confetti{position:fixed;top:-20px;width:10px;height:14px;z-index:9;pointer-events:none;animation:fall 2.6s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+/* road games */
+.rtabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.rt{font-family:'Lilita One';font-size:15px;border:0;border-radius:12px;padding:8px 12px;background:#efe2c6;color:#6b5d48;box-shadow:0 3px 0 #dcc79f;cursor:pointer}
+.rt.on{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
+.rp{display:none}.rp.on{display:block}
+.bingo{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.bingo button{aspect-ratio:1;border:0;border-radius:14px;background:#fff;box-shadow:0 4px 0 #dcc59a;font:800 12px 'Nunito',sans-serif;color:#5a4d3a;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;transition:transform .2s}
+.bingo button span{font-size:28px;line-height:1}
+.bingo button.on{background:linear-gradient(160deg,#d9f4ef,#a9e2d9);box-shadow:0 4px 0 #6fc0b4;transform:rotate(-3deg) scale(.96)}
+.bingo button.win{background:linear-gradient(180deg,#fff3c8,#ffd96b);box-shadow:0 4px 0 #d9a92b}
+.abc{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px}
+.abc div{aspect-ratio:1;border-radius:10px;background:#efe2c6;display:flex;align-items:center;justify-content:center;font-family:'Lilita One';font-size:22px;color:#b9a47c}
+.abc div.got{background:var(--turq);color:#fff;box-shadow:0 3px 0 var(--turq-d)}
+.abc div.now{background:#fff;color:var(--coral);box-shadow:0 0 0 3px var(--coral);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.dwrap{display:flex;justify-content:center;perspective:600px;margin:10px 0}
+.die{font-size:72px;width:120px;height:120px;border:0;border-radius:26px;background:linear-gradient(160deg,#fff,#f3e3c2);box-shadow:0 8px 0 #dcc59a,0 18px 24px rgba(80,50,10,.22);cursor:pointer}
+.die.roll{animation:roll .8s cubic-bezier(.2,.8,.3,1)}
+@keyframes roll{0%{transform:rotateX(0) rotateY(0)}100%{transform:rotateX(720deg) rotateY(540deg)}}
+.dout,.qcard{background:#fff;border-radius:16px;padding:16px;text-align:center;font-size:19px;font-weight:800;min-height:96px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #dcc59a}
+.dout b{color:var(--coral);font-family:'Lilita One';font-weight:400;font-size:24px;display:block}
+@media print{.b3-fx{display:none!important}}
+footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
+@media (prefers-reduced-motion:reduce){.card,.hero img,.pr,.cup div{transition:none}.die.roll,.abc div.now{animation:none}.confetti{display:none}}
+@media print{body{background:#fff}main>*:not(#dipl){display:none!important}#dipl{display:block!important}.dip{transform:none;box-shadow:none;margin-top:40px}.dip .btn{display:none}}
+</style>
+</head>
+<body>
+<main>
+<span class="tag">Your free gift</span>
+<h1 class="t3d">Murphy's Challenge<small>30 Days of Games</small></h1>
+<div class="b3-stage" aria-label="The book Murphy's Law: Whoever Loses Plays Again! in 3D">
+ <div class="b3-rays"></div><div class="b3-glow"></div><div class="b3-shadow"></div>
+ <div class="b3-float"><div class="b3-book">
+  <div class="b3-front"></div><div class="b3-back"></div><div class="b3-spine"></div>
+  <div class="b3-pages"></div><div class="b3-top"></div><div class="b3-bot"></div>
+ </div></div>
+</div>
+<div class="b3-hint">Drag the book to turn it ↻</div>
+
+<section class="panel">
+<h2>How it works</h2>
+<p style="margin:0">One mini challenge a day, 5–10 minutes, all together. Tap a day to flip it, read the challenge, play, then tap <b>Done!</b>. Every week you finish lights up a trophy. Missed a day? No problem: <b>whoever misses a day plays again tomorrow.</b></p>
+<div class="bar" aria-hidden="true"><i id="bar"></i></div>
+<div class="muted"><b id="count">0</b> of 30 challenges done</div>
+<div class="cups" id="cups"></div>
+</section>
+
+<section class="panel">
+<h2>The 30-day calendar</h2>
+<div class="muted">The full rules for every game are in the book.</div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section class="panel" id="dipl">
+<h2>You did it!</h2>
+<div class="dip">
+<div class="t3d">DIPLOMA<small>Try-Again Champion</small></div>
+<p style="margin:12px 0 0">awarded to</p>
+<input id="who" placeholder="Write the name here" aria-label="Name">
+<p style="margin:4px 0 14px">because they <b>tried again</b>, every single time.</p>
+<button class="btn t" onclick="window.print()">Print this diploma</button>
+</div>
+</section>
+
+<section class="panel" id="road">
+<h2>On the road 🚗</h2>
+<div class="muted">Games for car trips: the phone stays with a passenger, everybody plays by looking <b>out of the window</b>. The driver only plays with their voice!</div>
+<div class="rtabs" role="tablist">
+<button class="rt on" data-t="bingo">🎯 Car Bingo</button><button class="rt" data-t="abc">🔤 Alphabet Hunt</button><button class="rt" data-t="dice">🎲 Road Dice</button><button class="rt" data-t="ask">💬 Would you rather?</button>
+</div>
+<div class="rp on" id="rp-bingo"><p class="muted" style="margin:6px 0">Spot it out of the window, then tap it. Four in a row = BINGO!</p><div class="bingo" id="bingo"></div><button class="btn t" id="newBingo" style="margin-top:12px">New card</button></div>
+<div class="rp" id="rp-abc"><p class="muted" style="margin:6px 0">Find the letters <b>in order</b> on signs, trucks and shops. Tap the letter when someone spots it. Missed one? Murphy says: keep looking!</p><div class="abc" id="abc"></div><div style="display:flex;gap:10px;margin-top:12px"><button class="btn" id="abcNext">Found it!</button><button class="btn t" id="abcReset" style="width:auto">Restart</button></div></div>
+<div class="rp" id="rp-dice"><p class="muted" style="margin:6px 0">Roll Murphy's dice and play the challenge it gives you.</p><div class="dwrap"><button class="die" id="die" aria-label="Roll the dice">🎲</button></div><div class="dout" id="dout">Tap the dice to roll!</div></div>
+<div class="rp" id="rp-ask"><p class="muted" style="margin:6px 0">Everybody answers, and explains why. No wrong answers!</p><div class="qcard" id="qcard">Tap “Next question” to start.</div><button class="btn t" id="qnext" style="margin-top:12px">Next question</button></div>
+</section>
+
+<section class="panel">
+<h2>Print it out</h2>
+<div class="muted">Letter size, actual size (100%). Black and white is fine: everything is made to be coloured.</div>
+<div class="prints">
+<a class="pr" href="Murphys_Challenge_30_Days.pdf" download><div class="ic">📦</div><h3>Everything</h3><span>The full pack, 5 pages</span></a>
+<a class="pr" href="Calendar_30_Days.pdf" download><div class="ic">📅</div><h3>The calendar</h3><span>30 challenges to hang in the kitchen</span></a>
+<a class="pr" href="Trophy_Chart.pdf" download><div class="ic">🏆</div><h3>The trophies</h3><span>Colour one every week</span></a>
+<a class="pr" href="Diploma.pdf" download><div class="ic">🎓</div><h3>The diploma</h3><span>Try-Again Champion</span></a>
+</div>
+<p style="margin:16px 0 0"><a class="btn t" href="../">All the book's printables and games</a></p>
+</section>
+
+<footer>Murphy's Law: Whoever Loses Plays Again! · Giulia Ferraretti<br>Materials for personal and family use.</footer>
+</main>
+<script>
+const CH=["Blame Murphy! At dinner, everyone tells the funniest mishap of the day.","Invent your own Champion's Handshake and do it after every game.","Upside-Down Tournament: three games of tic-tac-toe, whoever loses the most wins.","The Losing Commentator: describe a defeat like the final of the World Cup.","Spot the Mistake: the grown-up hides three mistakes around the house, the child finds them.","Add an exhibit to the Museum of Mistakes, with its own label.","Build and Crash: the tallest tower you can make in five minutes.","The Two-Person Balloon: five breaths, looking into each other's eyes.","What number are you? Everyone says the highest number they reached today on the Anger Thermometer.","Five Senses Walk: 5 things to see, 4 to touch, 3 sounds, 2 smells, 1 taste.","The Melting Statue: squeeze everything for 5 seconds, then melt into a puddle.","Try the Magic Sentence in a mouse voice, a giant voice and a confident voice.","Switched-Roles Theatre: the child plays the tricky friend, the grown-up plays the child.","The Referee: today the prize goes to the fairest player, not the winner.","The First Two Minutes Ritual before homework: water, three breaths, \"Team ready!\"","The Turn Clock: homework in short turns, with a kangaroo break.","The Team Chart: if there was no yelling today, everyone gets a star.","Guess from the Cover: predict the story before you read it.","The Detective's Traffic Light: read a page saying green, yellow or red.","The Story Hand: five fingers, five questions about tonight's story.","Teacher for a Day: the child quizzes the grown-up, who gets one answer wrong on purpose.","The Interrogator: three questions with the book closed, in a detective voice.","Make five Memory Cards and put them in the \"AGAIN\" box.","The Picture Word: invent a funny picture for a French or English word.","The Mirror: what did I learn today? What isn't clear yet?","Team Stapp: find the counter-moves for tomorrow's mischief.","Roll the Solution Die for a real (or made-up) problem.","The Trouble Diary: three lines, with one good thing that's required.","The Rules Drawing: halfway through a drawing, draw a Murphy Card.","Read your Player ID cards together again: what has changed?"];
+const WEEKS=[[1,7,'Week 1'],[8,14,'Week 2'],[15,21,'Week 3'],[22,28,'Week 4'],[29,30,'Last 2']];
+const KEY='murphy-challenge-en';
+let done=new Set();
+try{done=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify([...done]))}catch(e){}}
+const grid=document.getElementById('grid'),cups=document.getElementById('cups');
+CH.forEach((t,i)=>{const n=i+1,d=document.createElement('div');d.className='day';d.dataset.n=n;
+ d.innerHTML=`<div class="card"><div class="face front"><div class="n">${n}</div><div class="lbl">${done.has(n)?'Done! ✓':'Tap to open'}</div></div><div class="face back"><b>Day ${n}</b><p>${t}</p><button class="btn sm">${done.has(n)?'Undo':'Done!'}</button></div></div>`;
+ d.addEventListener('click',ev=>{if(ev.target.tagName==='BUTTON'){ev.stopPropagation();toggle(n,d);return}d.classList.toggle('open')});
+ grid.appendChild(d)});
+WEEKS.forEach(([a,b,l])=>{const c=document.createElement('div');c.className='cup';c.innerHTML=`<div>🏆</div>${l}`;cups.appendChild(c)});
+function toggle(n,d){const was=done.has(n);was?done.delete(n):done.add(n);save();d.classList.remove('open');paint(!was?n:0)}
+function paint(justDone){
+ document.querySelectorAll('.day').forEach(d=>{const n=+d.dataset.n,on=done.has(n);d.classList.toggle('done',on);d.querySelector('.lbl').textContent=on?'Done! ✓':'Tap to open';d.querySelector('.btn').textContent=on?'Undo':'Done!'});
+ document.getElementById('count').textContent=done.size;document.getElementById('bar').style.width=(done.size/30*100)+'%';
+ [...cups.children].forEach((c,i)=>{const[a,b]=WEEKS[i];let all=true;for(let k=a;k<=b;k++)if(!done.has(k))all=false;const was=c.classList.contains('on');c.classList.toggle('on',all);if(all&&!was&&justDone>=a&&justDone<=b)confetti()});
+ const fin=done.size===30,dp=document.getElementById('dipl');if(fin&&!dp.classList.contains('show')&&justDone){confetti();setTimeout(()=>dp.scrollIntoView({behavior:'smooth'}),400)}dp.classList.toggle('show',fin)}
+function confetti(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const c=['#E8604C','#1FA3A3','#f2b632','#7b5cd6','#7cbf5c'];for(let i=0;i<60;i++){const s=document.createElement('i');s.className='confetti';s.style.left=Math.random()*100+'vw';s.style.background=c[i%5];s.style.animationDelay=Math.random()*.6+'s';s.style.borderRadius=i%3?'2px':'50%';document.body.appendChild(s);setTimeout(()=>s.remove(),3400)}}
+const who=document.getElementById('who');try{who.value=localStorage.getItem(KEY+'-name')||''}catch(e){}
+who.addEventListener('input',()=>{try{localStorage.setItem(KEY+'-name',who.value)}catch(e){}});
+paint(0);
+</script>
+<script src="../img/book3d/book3d.js"></script>
+<script src="../img/book3d/road.js"></script>
+</body>
+</html>
