@@ -137,6 +137,141 @@
     "Le zampe"
    ],
    "Con le pinne e la coda i pesci si spingono e cambiano direzione nell'acqua."
+  ],
+  [
+   "Quanti colori ha l'arcobaleno?",
+   [
+    "7",
+    "3",
+    "10"
+   ],
+   "Rosso, arancione, giallo, verde, azzurro, indaco e violetto: sono 7!"
+  ],
+  [
+   "Dove vivono i pinguini selvatici?",
+   [
+    "Al Polo Sud e nei mari del sud",
+    "Al Polo Nord",
+    "Nel deserto"
+   ],
+   "I pinguini vivono nella parte sud del mondo, soprattutto in Antartide. Al Polo Nord non ce ne sono!"
+  ],
+  [
+   "Quale animale ha la proboscide?",
+   [
+    "L'elefante",
+    "La giraffa",
+    "Il leone"
+   ],
+   "L'elefante usa la proboscide come naso, come mano e anche come doccia!"
+  ],
+  [
+   "Di cosa si nutre soprattutto il panda gigante?",
+   [
+    "Di bambù",
+    "Di pesce",
+    "Di formaggio"
+   ],
+   "Il panda gigante mangia quasi solo bambù, per molte ore al giorno."
+  ],
+  [
+   "Con quale parte del corpo sentiamo i profumi?",
+   [
+    "Il naso",
+    "Le orecchie",
+    "I piedi"
+   ],
+   "Il naso ci fa sentire odori e profumi: questo senso si chiama olfatto."
+  ],
+  [
+   "Quale di questi è un frutto?",
+   [
+    "La mela",
+    "La carota",
+    "La patata"
+   ],
+   "La mela nasce dal fiore e contiene i semi: è un frutto. Carota e patata crescono sotto terra."
+  ],
+  [
+   "Quale animale va in letargo d'inverno?",
+   [
+    "Il ghiro",
+    "La gallina",
+    "Il cavallo"
+   ],
+   "Il ghiro dorme per tutto l'inverno: per questo si dice \"dormire come un ghiro\"!"
+  ],
+  [
+   "Cosa serve per far volare un aquilone?",
+   [
+    "Il vento",
+    "La pioggia",
+    "Il buio"
+   ],
+   "Il vento spinge l'aquilone verso l'alto e lo tiene in aria."
+  ],
+  [
+   "Quale animale cambia colore per nascondersi?",
+   [
+    "Il camaleonte",
+    "Il gatto",
+    "La mucca"
+   ],
+   "Il camaleonte cambia colore della pelle, anche per mimetizzarsi."
+  ],
+  [
+   "Quale di questi animali è un rettile?",
+   [
+    "La tartaruga",
+    "La rana",
+    "Il topo"
+   ],
+   "La tartaruga è un rettile, come i serpenti e le lucertole. La rana è un anfibio."
+  ],
+  [
+   "Che cosa c'è al centro del nostro sistema solare?",
+   [
+    "Il Sole",
+    "La Terra",
+    "La Luna"
+   ],
+   "Tutti i pianeti, compresa la Terra, girano intorno al Sole."
+  ],
+  [
+   "Quando si vedono le stelle?",
+   [
+    "Di notte, con il cielo sereno",
+    "Di giorno a mezzogiorno",
+    "Solo quando piove"
+   ],
+   "Le stelle ci sono anche di giorno, ma la luce del Sole è così forte che non le vediamo."
+  ],
+  [
+   "Cosa fa un cubetto di ghiaccio in un bicchiere d'acqua?",
+   [
+    "Galleggia",
+    "Va a fondo",
+    "Diventa sale"
+   ],
+   "Il ghiaccio è più leggero dell'acqua, per questo galleggia, proprio come gli iceberg."
+  ],
+  [
+   "Quale animale ci dà la lana?",
+   [
+    "La pecora",
+    "La gallina",
+    "Il pesce"
+   ],
+   "La lana si ottiene tosando la pecora, che poi la fa ricrescere."
+  ],
+  [
+   "Di che colore è il sangue?",
+   [
+    "Rosso",
+    "Blu",
+    "Verde"
+   ],
+   "Il sangue è rosso grazie a una sostanza dei globuli rossi che trasporta l'ossigeno."
   ]
  ],
  "8-9": [
@@ -274,6 +409,141 @@
     "Lo stomaco"
    ],
    "Il cuore è un muscolo grande più o meno come il tuo pugno e batte circa 100.000 volte al giorno."
+  ],
+  [
+   "Con quale organo respiriamo?",
+   [
+    "I polmoni",
+    "Il cuore",
+    "Lo stomaco"
+   ],
+   "I polmoni si riempiono d'aria e passano l'ossigeno al sangue."
+  ],
+  [
+   "Come si chiama il cucciolo della mucca?",
+   [
+    "Il vitello",
+    "Il puledro",
+    "L'agnello"
+   ],
+   "Il vitello è il cucciolo della mucca. Il puledro è del cavallo, l'agnello della pecora."
+  ],
+  [
+   "Qual è l'oceano più grande della Terra?",
+   [
+    "Il Pacifico",
+    "L'Atlantico",
+    "L'Indiano"
+   ],
+   "L'Oceano Pacifico è il più grande e il più profondo di tutti."
+  ],
+  [
+   "Qual è il continente più freddo?",
+   [
+    "L'Antartide",
+    "L'Africa",
+    "L'Europa"
+   ],
+   "L'Antartide è coperta di ghiaccio: lì sono state misurate le temperature più basse della Terra."
+  ],
+  [
+   "Qual è l'animale più veloce sulla terraferma?",
+   [
+    "Il ghepardo",
+    "Il cavallo",
+    "Il leone"
+   ],
+   "Il ghepardo può superare i 100 chilometri all'ora, ma solo per pochi secondi."
+  ],
+  [
+   "Da che parte sorge il Sole?",
+   [
+    "A est",
+    "A ovest",
+    "A nord"
+   ],
+   "Il Sole sorge a est e tramonta a ovest, perché la Terra gira su se stessa."
+  ],
+  [
+   "Da quale parte della pianta nasce il frutto?",
+   [
+    "Dal fiore",
+    "Dalla radice",
+    "Dalla foglia"
+   ],
+   "Dopo l'impollinazione, il fiore si trasforma e diventa il frutto con i semi."
+  ],
+  [
+   "Come si chiama la nostra galassia?",
+   [
+    "La Via Lattea",
+    "Andromeda",
+    "L'Orsa Maggiore"
+   ],
+   "Il Sole e i suoi pianeti fanno parte della Via Lattea, che ha miliardi di stelle."
+  ],
+  [
+   "Da dove respira la balena?",
+   [
+    "Dallo sfiatatoio sulla testa",
+    "Dalle branchie",
+    "Dalla coda"
+   ],
+   "La balena è un mammifero: sale a galla e respira aria dallo sfiatatoio, facendo lo spruzzo."
+  ],
+  [
+   "Quanti sono i denti da latte di un bambino?",
+   [
+    "20",
+    "32",
+    "10"
+   ],
+   "I denti da latte sono 20. Poi cadono e arrivano i denti definitivi, che in un adulto sono 32."
+  ],
+  [
+   "Che cos'è un fossile?",
+   [
+    "Il resto di un essere vivente antico conservato nella roccia",
+    "Un tipo di sasso colorato",
+    "Un animale che vive sotto terra"
+   ],
+   "I fossili, come le ossa dei dinosauri o le conchiglie nella roccia, ci raccontano la vita di milioni di anni fa."
+  ],
+  [
+   "Di che colore è la clorofilla, la sostanza che cattura la luce nelle foglie?",
+   [
+    "Verde",
+    "Rossa",
+    "Blu"
+   ],
+   "La clorofilla è verde: per questo le foglie sono verdi!"
+  ],
+  [
+   "Quale mammifero depone le uova?",
+   [
+    "L'ornitorinco",
+    "Il gatto",
+    "Il cavallo"
+   ],
+   "L'ornitorinco vive in Australia: è un mammifero ma depone le uova, e ha il becco come un'anatra!"
+  ],
+  [
+   "Quale di questi materiali lascia passare l'elettricità?",
+   [
+    "Il rame",
+    "La plastica",
+    "Il legno"
+   ],
+   "Il rame è un metallo che conduce bene l'elettricità: per questo i fili elettrici sono di rame, coperti di plastica."
+  ],
+  [
+   "Quale animale costruisce le dighe sui fiumi?",
+   [
+    "Il castoro",
+    "La lontra",
+    "La rana"
+   ],
+   "Il castoro rosicchia i tronchi con i denti fortissimi e costruisce dighe e tane nell'acqua."
   ]
  ],
  "9-10": [
@@ -411,6 +681,141 @@
     "Animali che volano"
    ],
    "Pesci, anfibi, rettili, uccelli e mammiferi sono vertebrati: hanno la colonna vertebrale."
+  ],
+  [
+   "Quale pianeta ha gli anelli più famosi?",
+   [
+    "Saturno",
+    "Marte",
+    "Mercurio"
+   ],
+   "Gli anelli di Saturno sono fatti di pezzi di ghiaccio e roccia. Anche altri pianeti ne hanno, ma molto più sottili."
+  ],
+  [
+   "Qual è l'organo più grande del corpo umano?",
+   [
+    "La pelle",
+    "Il fegato",
+    "Il cuore"
+   ],
+   "La pelle ricopre tutto il corpo e ci protegge: è l'organo più grande che abbiamo."
+  ],
+  [
+   "Quale gas mandiamo fuori quando espiriamo?",
+   [
+    "L'anidride carbonica",
+    "L'elio",
+    "Il vapore di ferro"
+   ],
+   "Respirando prendiamo ossigeno e buttiamo fuori anidride carbonica, che le piante usano per crescere."
+  ],
+  [
+   "Quanto dura un giro completo della Terra su se stessa?",
+   [
+    "Circa 24 ore",
+    "Una settimana",
+    "Un anno"
+   ],
+   "Un giro della Terra su se stessa dura circa 24 ore: è così che arrivano il giorno e la notte."
+  ],
+  [
+   "Come si chiamano gli animali che vivono sia in acqua sia sulla terra, come la rana?",
+   [
+    "Anfibi",
+    "Rettili",
+    "Mammiferi"
+   ],
+   "Gli anfibi, come rane e salamandre, nascono in acqua e da adulti possono vivere anche sulla terra."
+  ],
+  [
+   "Qual è il fiume più lungo d'Italia?",
+   [
+    "Il Po",
+    "Il Tevere",
+    "L'Arno"
+   ],
+   "Il Po è lungo circa 650 chilometri e attraversa la Pianura Padana."
+  ],
+  [
+   "Qual è la montagna più alta delle Alpi?",
+   [
+    "Il Monte Bianco",
+    "Il Cervino",
+    "Il Monte Rosa"
+   ],
+   "Il Monte Bianco supera i 4.800 metri, al confine tra Italia e Francia."
+  ],
+  [
+   "Che cos'è l'eco?",
+   [
+    "Un suono che rimbalza e torna indietro",
+    "Un tipo di vento",
+    "Una nuvola bassa"
+   ],
+   "Se gridi davanti a una montagna, il suono rimbalza sulla roccia e torna da te: è l'eco!"
+  ],
+  [
+   "Quale organo comanda tutto il corpo?",
+   [
+    "Il cervello",
+    "Lo stomaco",
+    "I polmoni"
+   ],
+   "Il cervello riceve i messaggi dai sensi e manda gli ordini ai muscoli attraverso i nervi."
+  ],
+  [
+   "Quale animale ha il collo più lungo?",
+   [
+    "La giraffa",
+    "Il cammello",
+    "Lo struzzo"
+   ],
+   "La giraffa ha il collo più lungo di tutti, eppure ha solo 7 vertebre nel collo, come noi!"
+  ],
+  [
+   "In che stato si trova l'acqua quando è vapore?",
+   [
+    "Gassoso",
+    "Solido",
+    "Liquido"
+   ],
+   "Il vapore è acqua allo stato gassoso. Il ghiaccio è solido e l'acqua del rubinetto è liquida."
+  ],
+  [
+   "Quale strumento si usa per guardare le stelle lontane?",
+   [
+    "Il telescopio",
+    "Il microscopio",
+    "Il termometro"
+   ],
+   "Il telescopio fa sembrare vicine le cose lontane, come la Luna e i pianeti."
+  ],
+  [
+   "Quale strumento si usa per vedere cose piccolissime?",
+   [
+    "Il microscopio",
+    "Il telescopio",
+    "La bussola"
+   ],
+   "Con il microscopio si vedono le cellule e i microbi, invisibili a occhio nudo."
+  ],
+  [
+   "Dove conserva l'acqua un cactus?",
+   [
+    "Nel fusto",
+    "Nei fiori",
+    "Nell'aria"
+   ],
+   "Il cactus ha un fusto grosso e spugnoso che fa da serbatoio d'acqua nel deserto."
+  ],
+  [
+   "Il suono può viaggiare nello spazio vuoto?",
+   [
+    "No, nel vuoto non c'è aria",
+    "Sì, ancora più veloce",
+    "Solo di notte"
+   ],
+   "Il suono ha bisogno di aria, acqua o di un oggetto per viaggiare. Nello spazio vuoto c'è silenzio."
   ]
  ],
  "10-11": [
@@ -557,6 +962,132 @@
     "La quantità di pioggia"
    ],
    "La scala Richter misura l'energia liberata da un terremoto."
+  ],
+  [
+   "Come si chiamano le particelle con carica negativa che girano intorno al nucleo dell'atomo?",
+   [
+    "Elettroni",
+    "Protoni",
+    "Neutroni"
+   ],
+   "Gli elettroni hanno carica negativa, i protoni positiva e i neutroni nessuna carica."
+  ],
+  [
+   "Chi scoprì nel 1610 quattro lune di Giove con il cannocchiale?",
+   [
+    "Galileo Galilei",
+    "Leonardo da Vinci",
+    "Isaac Newton"
+   ],
+   "Galileo Galilei puntò il cannocchiale verso il cielo e scoprì le quattro lune più grandi di Giove."
+  ],
+  [
+   "Qual è il simbolo chimico dell'oro?",
+   [
+    "Au",
+    "Ag",
+    "Fe"
+   ],
+   "Au viene dal latino aurum. Ag è l'argento e Fe è il ferro."
+  ],
+  [
+   "Qual è il pianeta più caldo del sistema solare?",
+   [
+    "Venere",
+    "Mercurio",
+    "Marte"
+   ],
+   "Venere è più calda di Mercurio, anche se è più lontana dal Sole: la sua atmosfera densa trattiene il calore."
+  ],
+  [
+   "Che cosa trasporta l'ossigeno nel sangue?",
+   [
+    "I globuli rossi",
+    "I globuli bianchi",
+    "Le piastrine"
+   ],
+   "I globuli rossi portano l'ossigeno, i globuli bianchi ci difendono dai microbi e le piastrine fermano le ferite."
+  ],
+  [
+   "In quale parte della cellula si trova il DNA?",
+   [
+    "Nel nucleo",
+    "Nella membrana",
+    "Fuori dalla cellula"
+   ],
+   "Il DNA si trova soprattutto nel nucleo e contiene le istruzioni per far funzionare l'essere vivente."
+  ],
+  [
+   "Che cosa forma soprattutto le onde del mare?",
+   [
+    "Il vento",
+    "I pesci",
+    "La Luna piena"
+   ],
+   "Le onde si formano soprattutto quando il vento soffia sulla superficie del mare."
+  ],
+  [
+   "Che cosa provoca le maree?",
+   [
+    "L'attrazione della Luna e del Sole",
+    "Il vento",
+    "Le navi"
+   ],
+   "La gravità della Luna, e in parte del Sole, attira l'acqua dei mari: così si alza e si abbassa."
+  ],
+  [
+   "Quanto è veloce il suono nell'aria, più o meno?",
+   [
+    "Circa 340 metri al secondo",
+    "Circa 3 metri al secondo",
+    "Più veloce della luce"
+   ],
+   "Il suono nell'aria percorre circa 340 metri ogni secondo: tantissimo, ma molto meno della luce."
+  ],
+  [
+   "Come si chiama lo strato dell'atmosfera che ci protegge dai raggi ultravioletti del Sole?",
+   [
+    "Lo strato di ozono",
+    "Lo strato di vapore",
+    "Lo strato di elio"
+   ],
+   "L'ozono è un gas che filtra gran parte dei raggi ultravioletti, pericolosi per la pelle e per gli occhi."
+  ],
+  [
+   "Che cos'è un'eclissi di Sole?",
+   [
+    "La Luna passa davanti al Sole e lo copre",
+    "Il Sole si spegne per un po'",
+    "Una nuvola enorme copre il cielo"
+   ],
+   "Durante l'eclissi di Sole la Luna si mette tra il Sole e la Terra e ne nasconde la luce. Mai guardarla senza occhiali speciali!"
+  ],
+  [
+   "Quale di queste energie è rinnovabile?",
+   [
+    "L'energia del vento",
+    "Il petrolio",
+    "Il carbone"
+   ],
+   "Il vento non finisce mai: l'energia eolica è rinnovabile. Petrolio e carbone invece prima o poi finiscono."
+  ],
+  [
+   "Come si chiama la serie che mostra chi mangia chi in natura?",
+   [
+    "Catena alimentare",
+    "Ciclo dell'acqua",
+    "Albero genealogico"
+   ],
+   "Esempio di catena alimentare: l'erba è mangiata dal coniglio, il coniglio dalla volpe."
+  ],
+  [
+   "Qual è l'osso più piccolo del corpo umano?",
+   [
+    "La staffa, nell'orecchio",
+    "Il mignolo del piede",
+    "La rotula"
+   ],
+   "La staffa si trova nell'orecchio ed è lunga solo pochi millimetri: aiuta a sentire i suoni."
   ]
  ]
 };
