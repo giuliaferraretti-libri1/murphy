@@ -77,6 +77,21 @@ h1,h2,h3,.lil{font-family:'Lilita One',sans-serif;font-weight:400}
 .rt{font-family:'Lilita One';font-size:15px;border:0;border-radius:12px;padding:8px 12px;background:#efe2c6;color:#6b5d48;box-shadow:0 3px 0 #dcc79f;cursor:pointer}
 .rt.on{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--coral-d)}
 .rp{display:none}.rp.on{display:block}
+.qz{background:#fff;border-radius:16px;padding:14px;box-shadow:0 5px 0 #dcc59a}
+.qzhead{display:flex;justify-content:space-between;font-weight:800;font-size:14px;color:#8a7a60}
+.qzq{font-family:'Lilita One';font-size:22px;color:var(--ink);margin:8px 0 12px;line-height:1.2}
+.qzops{display:grid;gap:8px}
+.qzops button{font:800 17px 'Nunito',sans-serif;text-align:left;border:0;border-radius:12px;padding:12px 14px;background:#f6ecd6;box-shadow:0 3px 0 #dcc79f;color:var(--ink);cursor:pointer}
+.qzops button.ok{background:#bfeee5;box-shadow:0 3px 0 #6fc0b4}
+.qzops button.no{background:#ffd0c7;box-shadow:0 3px 0 #e08a7a}
+.qzops button:disabled{cursor:default}
+.qzfb{margin-top:10px;font-size:16px;line-height:1.35}.qzfb:empty{display:none}
+.qzfb.good{background:#e8f8f4;border-radius:12px;padding:10px}.qzfb.bad{background:#fff0ec;border-radius:12px;padding:10px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+.cpage{display:block;background:#fff;border-radius:12px;padding:6px;text-decoration:none;text-align:center;box-shadow:0 4px 0 #dcc59a;transition:transform .2s}
+.cpage:hover{transform:translateY(-3px) rotate(-1deg)}
+.cpage img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.cpage span{display:block;font-family:'Lilita One';color:var(--coral);font-size:15px;margin-top:2px}
 .how{background:#fff;border-radius:14px;padding:8px 12px;margin:8px 0 12px;box-shadow:0 3px 0 #e2cfa8;font-size:15px}
 .how summary{font-family:'Lilita One';color:var(--coral);font-size:17px;cursor:pointer}
 .how ol{margin:6px 0 2px;padding-left:22px}.how li{margin:3px 0}
@@ -154,6 +169,19 @@ footer{font-size:13px;color:#7a6b55;text-align:center;margin-top:28px}
 <div class="rp" id="rp-ask"><details class="how" open><summary>How to play</summary><ol><li>Tap <b>Next question</b> and read it out loud.</li><li>Everyone chooses one answer, one at a time.</li><li>Each person explains <b>why</b> in one sentence. No wrong answers!</li><li>Bonus: try to guess what Mum or Dad will choose before they answer.</li></ol></details><div class="qcard" id="qcard">Tap “Next question” to start.</div><button class="btn t" id="qnext" style="margin-top:12px">Next question</button></div>
 </section>
 
+<section class="panel" id="science">
+<h2>Murphy's Science Quiz 🔬</h2>
+<details class="how" open><summary>How to play</summary><ol><li>Read the question out loud (a grown-up can read it to younger kids).</li><li>Tap the answer you think is right.</li><li>Green = correct! Red = oops: read the “did you know” fact, now you know it!</li><li>10 questions per game. At the end you see your score.</li><li>Tap <b>Play again</b> for 10 new questions. Play as a family: who gets the best score? Whoever loses plays again!</li></ol></details>
+<div class="qz"><div class="qzhead"><span id="qzN"></span><span id="qzScore"></span></div><div class="qzq" id="qzQ"></div><div class="qzops" id="qzOps"></div><div class="qzfb" id="qzFb"></div><button class="btn t" id="qzNext" style="display:none;margin-top:12px"></button></div>
+</section>
+
+<section class="panel" id="colour">
+<h2>Colour Murphy 🖍️</h2>
+<details class="how" open><summary>How to use them</summary><ol><li>Tap a drawing: it opens as a page ready to print.</li><li>Print it on Letter paper at actual size (100%).</li><li>Colour it with pencils, crayons or markers. Went outside the lines? Blame Murphy, and keep colouring!</li><li>Want them all? Tap <b>Print all 12 pages</b>.</li></ol></details>
+<div class="cgrid"><a class="cpage" href="colour/Colouring_01.pdf" target="_blank" rel="noopener"><img src="colour/t01.jpg" alt="Colouring page 1" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_02.pdf" target="_blank" rel="noopener"><img src="colour/t02.jpg" alt="Colouring page 2" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_03.pdf" target="_blank" rel="noopener"><img src="colour/t03.jpg" alt="Colouring page 3" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_04.pdf" target="_blank" rel="noopener"><img src="colour/t04.jpg" alt="Colouring page 4" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_05.pdf" target="_blank" rel="noopener"><img src="colour/t05.jpg" alt="Colouring page 5" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_06.pdf" target="_blank" rel="noopener"><img src="colour/t06.jpg" alt="Colouring page 6" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_07.pdf" target="_blank" rel="noopener"><img src="colour/t07.jpg" alt="Colouring page 7" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_08.pdf" target="_blank" rel="noopener"><img src="colour/t08.jpg" alt="Colouring page 8" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_09.pdf" target="_blank" rel="noopener"><img src="colour/t09.jpg" alt="Colouring page 9" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_10.pdf" target="_blank" rel="noopener"><img src="colour/t10.jpg" alt="Colouring page 10" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_11.pdf" target="_blank" rel="noopener"><img src="colour/t11.jpg" alt="Colouring page 11" loading="lazy"><span>Print</span></a><a class="cpage" href="colour/Colouring_12.pdf" target="_blank" rel="noopener"><img src="colour/t12.jpg" alt="Colouring page 12" loading="lazy"><span>Print</span></a></div>
+<a class="btn" href="colour/Colouring_Pages_All.pdf" download style="margin-top:14px">Print all 12 pages</a>
+</section>
+
 <section class="panel">
 <h2>Print it out</h2>
 <div class="muted">Letter size, actual size (100%). Black and white is fine: everything is made to be coloured.</div>
@@ -194,5 +222,6 @@ paint(0);
 </script>
 <script src="../img/book3d/book3d.js"></script>
 <script src="../img/book3d/road.js?v=2"></script>
+<script src="../img/book3d/science.js"></script>
 </body>
 </html>
